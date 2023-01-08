@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>My Favourite</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Standard -->
+    <link rel="shortcut icon" href="assets/img/ficon.png">
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+    <!-- Latest Bootstrap min CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
+    <!-- latest fonts awesome -->
+    <link rel="stylesheet" href="assets/font/css/font-awesome.min.css" type="text/css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <!--  baguetteBox -->
+    <link rel="stylesheet" href="assets/css/baguetteBox.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css" />
+
+</head>
+
+<body>
+<!--  nav  -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="assets/img/logo.png" height=55 alt="Logo"/>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a class="page-scroll" href="./index.html">主页</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="./mycart.html">我的收藏</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="./user-login.html">用户登录</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="./new-user.html">注册新用户</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="./logout">注销</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="./admin-login.html">管理员登录</a>
+                </li>
+            </ul>
+
+        </div>
+        <!-- navbar-collapse  -->
+    </div>
+</nav>
+
+
+<!-- START TEAM SECTION -->
+<section id="team" class="section-padding team-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="padding-top:50px">
+                <div class="title">
+                    <h2>MY <span>Favourite</span></h2>
+                    <p>我 的 收 藏</p>
+                </div>
+                <div class="container">
+                    <div class="row" id="showCart">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- START FOOTER SECTION -->
+<footer class="section-padding footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer-padding">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+
+                            <div class="row">
+                                <div class="col-md-12 copyright">
+                                    <p>Copyright &copy; 2022.LXY All rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Back to top -->
+<a href="#" class="back-to-top" id="back-to-top"> <i class="fa fa-chevron-up" aria-hidden="true"></i>
+</a>
+<!-- jQuery -->
+<script src="assets/js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="assets/js/jquery.easing.min.js"></script>
+<!-- baguetteBox -->
+<script src="assets/js/baguetteBox.js" async></script>
+<script src="assets/js/plugins.js" async></script>
+<!--  Custom Theme JavaScript  -->
+<script src="assets/js/custom.js"></script>
+<!--  Custom Theme filterizr  -->
+<script src="assets/js/jquery.filterizr.js"></script>
+<script src="assets/js/controls.js"></script>
+<!-- Kick off Filterizr -->
+<script type="text/javascript">
+<!--        $(function() {-->
+<!--            //Initialize filterizr with default options-->
+<!--            $('.filtr-container').filterizr();-->
+<!--        });-->
+
+</script>
+<script>
+$(document).ready(function(){
+    $.getJSON("./getRolesInCart", function(roles){
+        console.log(roles);
+        refreshRoleList(roles);
+    });
+});
+
+function removeFromCart(event) {
+  var btn = $(event.target);
+  var roleId = btn.attr("roleId");
+  $.getJSON("./removeFromCart?roleId=" + roleId, (message) => {
+      console.log(message);
+      if (message.code == 200) {
+           btn.parent().parent().remove();
+           if (message.message == "success") {
+                console.log(btn.attr("roleName")+"成功加入收藏！");
+                alert(btn.attr("roleName")+"已成功移出收藏！");
+           }
+      }
+  });
+}
+
+function refreshRoleList(roles) {
+     for (var i = 0; i < roles.length; i++) {
+        var role = roles[i];
+        console.log(role);
+        $("#showCart").append(`
+        <div class="col-md-4">
+		    <div class="team-post">
+			    <img height=300px alt="team" src='./upload/${role.picture}'>
+                <ul class="team-social">
+                        <font color="white" size="4">${role.ename}</font>
+                </ul>
+			    <div class="team-content">
+                    <h2>${role.cname}</h2>
+		        </div>
+		        <div roleId="${role.id}" roleName="${role.cname}" onclick="removeFromCart(event)">
+                    <i class="fa-regular fa-star" roleId="${role.id}" roleName="${role.cname}" onclick="removeFromCart(event)"></i>
+                    <font face='黑体' roleId="${role.id}" roleName="${role.cname}" onclick="removeFromCart(event)">取消收藏</font>
+                </div>
+		    </div>
+	    </div>
+        `);
+     }
+}
+
+</script>
+</body>
+</html>
+

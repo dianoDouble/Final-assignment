@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="lib">
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/commons-io-2.11.0.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/commons-logging-1.2.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/myapp.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/jackson-databind-2.14.1.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/commons-pool2-2.11.1.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/jackson-annotations-2.14.1.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/jackson-core-2.14.1.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/mysql-connector-j-8.0.31.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/commons-dbcp2-2.9.0.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/commons-fileupload-1.4.jar" />
+  </library>
+  <library name="servlet-api">
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/servlet-api.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/mysql-connector-j-8.0.31.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/commons-dbcp2-2.9.0.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/jackson-annotations-2.14.1.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/commons-pool2-2.11.1.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/jackson-core-2.14.1.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/jackson-databind-2.14.1.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/commons-logging-1.2.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/commons-io-2.11.0.jar" />
+    <archive path="C:/Users/Asus/Desktop/java-course-design-master/原神角色查询系统/WebRoot/WEB-INF/lib/commons-fileupload-1.4.jar" />
+  </library>
+</eclipse-userlibraries>
+
